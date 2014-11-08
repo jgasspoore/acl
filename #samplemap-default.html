@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+
+     var map;
+
+     function makeMap(lat, long) {
+       var latlng = new google.maps.LatLng(lat, long);
+       var options = {
+         zoom: 8,
+         center: latlng,
+		 styles: [{"featureType":"landscape","stylers":[{"hue":"#F1FF00"},{"saturation":-27.4},{"lightness":9.4},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#0099FF"},{"saturation":-20},{"lightness":36.4},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#00FF4F"},{"saturation":0},{"lightness":0},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FFB300"},{"saturation":-38},{"lightness":11.2},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#00B6FF"},{"saturation":4.2},{"lightness":-63.4},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#9FFF00"},{"saturation":0},{"lightness":0},{"gamma":1}]}],
+       };
+
+       map = new google.maps.Map(document.getElementById("map"), options);
+     }
+
+     function printCoords() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++)
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+        document.write(lat + "\t, " + lng + "\n")
+     }					  
+
+	 
+	 
+	 var pinImage = new google.maps.MarkerImage("new_marker.png");
+     function placeMarkers() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++) {
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+	 text = cTable.rows[i].cells[2].textContent
+         var myLatlng = new google.maps.LatLng(lat,lng);
+
+	 var marker = new google.maps.Marker({
+	   position: myLatlng,
+	   map: map,
+	   icon: pinImage,
+	   title: text
+	 });
+       }
+     }					  
+
+
+   $(document).ready(function () {
+     $('#cTable').hide()
+     
+     makeMap(30, -97)
+     placeMarkers()
+
+   });
+
+  </script>
+</head>
+<body>
+<div id = "map" style="height: 670px"></div></div><table id = "cTable">
+<tr id = "coord0">
+<td id = "lng">-97.75400984</td><td id = "lat">30.22831483</td>
+<td>@lordemusic seeing you live at ACL made my life significantly better. Thank you. #lorde</td>
+</tr>
+<tr id = "coord1">
+<td id = "lng">-97.77666667</td><td id = "lat">30.26361111</td>
+<td>Just wanna relive this everyday. #Lorde #yellowflickerbeat #ACL #latergram @ Zilker Metropolitan Park http://t.co/L2uBySl1xA</td>
+</tr>
+<tr id = "coord2">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Love these chickens @sckepp @kingaphilipps 💋💋 #ACL #phantogram #lorde @ Austin City Limits Music… http://t.co/9zrbUoVWje</td>
+</tr>
+<tr id = "coord3">
+<td id = "lng">-97.77922095</td><td id = "lat">30.51277714</td>
+<td>@psuruns10 @Lorde ACL is over, bro.</td>
+</tr>
+<tr id = "coord4">
+<td id = "lng">-97.76382947</td><td id = "lat">30.26737867</td>
+<td>Front row for Lorde, AND she pointed at me. I can say ACL was a success. @ ACL Fest Zilker Park http://t.co/3STjQA9KAQ</td>
+</tr>
+<tr id = "coord5">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>Lorde, consider me on your team. #aclfest #impressed @ Austin City Limits Music Festival (ACL) http://t.co/zhSlEyA3JR</td>
+</tr>
+<tr id = "coord6">
+<td id = "lng">-97.7694157</td><td id = "lat">30.26716128</td>
+<td>ACL this weekend was a dream! Lorde was my favorite, she put her heart and soul into her performance… http://t.co/04gHqPt8Yx</td>
+</tr>
+<tr id = "coord7">
+<td id = "lng">-95.44905044</td><td id = "lat">29.74708392</td>
+<td>Probs a lil sacrilegious for me to be screaming "I love you, Lorde!" on a Sunday at ACL but the heart wants what the heart wants</td>
+</tr>
+</table>
+</body>

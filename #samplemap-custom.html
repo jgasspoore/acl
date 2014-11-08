@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!-- Map Layout by SNAZZY MAPS: - http://snazzymaps.com/style/98/purple-rain -->
+<html>
+<head>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+  
+
+
+     var map;
+
+     function makeMap(lat, long) {
+       var latlng = new google.maps.LatLng(lat, long);
+       var options = {
+         zoom: 8,
+         center: latlng,
+		 styles: [{"featureType":"road","stylers":[{"hue":"#5e00ff"},{"saturation":-79}]},{"featureType":"poi","stylers":[{"saturation":-78},{"hue":"#6600ff"},{"lightness":-47},{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"lightness":22}]},{"featureType":"landscape","stylers":[{"hue":"#6600ff"},{"saturation":-11}]},{},{},{"featureType":"water","stylers":[{"saturation":-65},{"hue":"#1900ff"},{"lightness":8}]},{"featureType":"road.local","stylers":[{"weight":1.3},{"lightness":30}]},{"featureType":"transit","stylers":[{"visibility":"simplified"},{"hue":"#5e00ff"},{"saturation":-16}]},{"featureType":"transit.line","stylers":[{"saturation":-72}]},{}]
+       };
+
+       map = new google.maps.Map(document.getElementById("map"), options);
+     }
+
+     function printCoords() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++)
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+        document.write(lat + "\t, " + lng + "\n")
+     }
+
+	var pinImage = new google.maps.MarkerImage("new_marker.png");
+
+     function placeMarkers() {
+       num_coords = $('table tbody tr').length
+       var cTable = document.getElementById("cTable")
+       for (i = 0; i < num_coords; i++) {
+         lng = cTable.rows[i].cells[0].textContent
+         lat = cTable.rows[i].cells[1].textContent
+	 text = cTable.rows[i].cells[2].textContent
+         var myLatlng = new google.maps.LatLng(lat,lng);
+
+	 var marker = new google.maps.Marker({
+	   position: myLatlng,
+	   map: map,
+	   icon: pinImage,
+	   title: text
+	   
+	 });
+       }
+     }					  
+
+
+   $(document).ready(function () {
+     $('#cTable').hide()
+     
+     makeMap(30, -97)
+     placeMarkers()
+	 
+   });
+
+  </script>
+</head>
+
+<body>
+<div id = "map" style="height: 468px"></div></div><table id = "cTable">
+<tr id = "coord0">
+<td id = "lng">-97.7639</td><td id = "lat">30.2672</td>
+<td>Just had to take the obligatory crane pic.  
+#cranes #construction #austin #texas @ Austin, Texas http://t.co/U0klh1meSu</td>
+</tr>
+<tr id = "coord1">
+<td id = "lng">-87.74982185</td><td id = "lat">41.73754137</td>
+<td>My dad just told me he rented a black jeep wrangler while he was at work in Texas and now he's gonna buy one 😒 wtf buy me one too🙋</td>
+</tr>
+<tr id = "coord2">
+<td id = "lng">-97.69700898</td><td id = "lat">31.11122249</td>
+<td>It's so hot I'm so done with texas</td>
+</tr>
+<tr id = "coord3">
+<td id = "lng">-98.48699646</td><td id = "lat">29.42989111</td>
+<td>White House: 'Shortcomings' in Texas Ebola case: By JIM KUHNHENNAssociated PressWASHINGTON (AP) -- The White House… http://t.co/RhgnbrzFHq</td>
+</tr>
+<tr id = "coord4">
+<td id = "lng">-106.4855885</td><td id = "lat">31.76017093</td>
+<td>Report: Rangers decline option on Rios: The Texas Rangers informed outfielder Alex Rios that they will decline his… http://t.co/Evmeuget2W</td>
+</tr>
+<tr id = "coord5">
+<td id = "lng">-98.48699646</td><td id = "lat">29.42989111</td>
+<td>White House: 'Shortcomings' in Texas Ebola case: LIVE STREAM: President Obama to make statement following cabinet… http://t.co/q2IyXWEocg</td>
+</tr>
+<tr id = "coord6">
+<td id = "lng">-72.5281504</td><td id = "lat">42.587716</td>
+<td>Ebola outbreak: Second nurse Amber Jay Vinson tests positive in Texas http://t.co/3UlQzyOaQw via @MailOnline</td>
+</tr>
+<tr id = "coord7">
+<td id = "lng">-71.2332722</td><td id = "lat">42.3685289</td>
+<td>Texas is really dropping the ball on this #Ebola issue.</td>
+</tr>
+<tr id = "coord8">
+<td id = "lng">-80.7931876</td><td id = "lat">35.236778</td>
+<td>2 TX Presby healthcare workers w/ #ebola, one takes a trip.Sounds like no1 frm that hospital has any precautionary wisdom. Thank you,Texas.</td>
+</tr>
+<tr id = "coord9">
+<td id = "lng">-84.61490113</td><td id = "lat">39.24057984</td>
+<td>Ebola is not just spread through fluids obviously.... The nurse in Texas followed all the protocol and still got it 😖</td>
+</tr>
+<tr id = "coord10">
+<td id = "lng">-73.21326613</td><td id = "lat">44.47832708</td>
+<td>Introducing California and Texas to #vtbeer (@ The Farmhouse Tap &amp; Grill - @fhtgburlington in Burlington, VT) https://t.co/NcDOeEsTNM</td>
+</tr>
+<tr id = "coord11">
+<td id = "lng">144.90310255</td><td id = "lat">-37.8046428</td>
+<td>@TKirk81 like this? “@billmaher: I like Texas' new tourism slogan: Come to have an unwanted baby, stay because you're dying of Ebola.”</td>
+</tr>
+<tr id = "coord12">
+<td id = "lng">-89.3874796</td><td id = "lat">43.07295349</td>
+<td>@nrvanb did you see this? "Rent a Yurt Under Texas Stars: http://t.co/QBbR5cz9hZ http://t.co/q8CgJC0EtQ”</td>
+</tr>
+<tr id = "coord13">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>Someone is sooooo pumped!  #attpacfashtag #attpac #MeagansFairwell @ State Fair of Texas http://t.co/qOmcu9M8bD</td>
+</tr>
+<tr id = "coord14">
+<td id = "lng">-118.34721314</td><td id = "lat">34.16921725</td>
+<td>“@latimes: Second Texas healthcare worker tests positive for Ebola http://t.co/vr3DrX5dBw” #scarynews #EbolaOutbreak</td>
+</tr>
+<tr id = "coord15">
+<td id = "lng">-118.24533538</td><td id = "lat">34.05161048</td>
+<td>New video shows Ebola patient's dog under observation in Texas: New video released by Dallas city officials shows… http://t.co/HCfiU857gn</td>
+</tr>
+<tr id = "coord16">
+<td id = "lng">-118.24533538</td><td id = "lat">34.05161048</td>
+<td>PHOTOS: Ebola patient's dog under observation in Texas: Nina Pham's year-old King Charles Spaniel, Bentley, is… http://t.co/iIPX31uCCe</td>
+</tr>
+<tr id = "coord17">
+<td id = "lng">-97.0758932</td><td id = "lat">32.5840058</td>
+<td>And going to Texas state during the weekend</td>
+</tr>
+<tr id = "coord18">
+<td id = "lng">-82.35895496</td><td id = "lat">28.84144942</td>
+<td>@MRichards5 @Thecrabbyjoe what's so great about Texas? http://t.co/JZJno06yp2</td>
+</tr>
+<tr id = "coord19">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>Because HUMP DAAAY 🐫 #sunburnt @ State Fair of Texas http://t.co/SGO7eaLNCa</td>
+</tr>
+<tr id = "coord20">
+<td id = "lng">-95.414793</td><td id = "lat">29.770653</td>
+<td>Get INKED-UP HOUSTON TEXAS exclusively at Prison Break Tattoos. Come see Houston's HOTTEST new theme… http://t.co/AQsAykfxhH</td>
+</tr>
+<tr id = "coord21">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td># @ State Fair of Texas http://t.co/qNJA8QQCgo</td>
+</tr>
+<tr id = "coord22">
+<td id = "lng">-106.423</td><td id = "lat">31.7902</td>
+<td>First shot with a new FNH P90 5.7x28... Shooting a IED... @ El Paso, Texas http://t.co/Oq4WS1E795</td>
+</tr>
+<tr id = "coord23">
+<td id = "lng">-98.6893</td><td id = "lat">29.5653</td>
+<td>#beautiful#viewofthecity#lovemytown#helotes#texas @ Helotes, Texas http://t.co/kUWES75VQW</td>
+</tr>
+<tr id = "coord24">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>Possibly the greatest day of my life. #FunnelCake #RedVelvet #Texodus #StateFair @ State Fair of Texas http://t.co/cy49I149JD</td>
+</tr>
+<tr id = "coord25">
+<td id = "lng">-84.33700291</td><td id = "lat">39.43347308</td>
+<td>I can't believe that one of the nurses who cared for the man with Ebola in Texas was allowed to board a plane less than a week after he died</td>
+</tr>
+<tr id = "coord26">
+<td id = "lng">-87.54604624</td><td id = "lat">33.21752434</td>
+<td>Lower Bowl Texas A&amp;M Ticket For $30</td>
+</tr>
+<tr id = "coord27">
+<td id = "lng">-74.1766071</td><td id = "lat">40.8735032</td>
+<td>@arielhrogers @realDonaldTrump they can come in, as long as they not from Texas. Not to stop Ebola really, just to stop Texans.</td>
+</tr>
+<tr id = "coord28">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>It's fair day!  #TxStateFair @ State Fair of Texas http://t.co/uUCwPhfx6w</td>
+</tr>
+<tr id = "coord29">
+<td id = "lng">-122.3554156</td><td id = "lat">47.2500243</td>
+<td>@WLTX @KING5Seattle great we could not contain in Texas so we just spread It around some more</td>
+</tr>
+<tr id = "coord30">
+<td id = "lng">-97.32189078</td><td id = "lat">32.61348358</td>
+<td>My poor roses didn't produce all summer but now that fall is around the corner they are bloomin like crazy!! Good thing I live in Texas!</td>
+</tr>
+<tr id = "coord31">
+<td id = "lng">-118.40261292</td><td id = "lat">33.94547188</td>
+<td>@ABC7robhayes: Ebola Dog Watch! Nurse's pooch in quarantine http://t.co/NciDp3qmAl http://t.co/25HxPBo849”</td>
+</tr>
+<tr id = "coord32">
+<td id = "lng">-81.7321808</td><td id = "lat">28.5148662</td>
+<td>US supreme court blocks Texas abortion restrictions http://t.co/k4gRT42o2x</td>
+</tr>
+<tr id = "coord33">
+<td id = "lng">-95.1857707</td><td id = "lat">29.4938408</td>
+<td>@TimDownie1 I still have finished the Bridge you know that stuff really does happen  on the Texas border....scary!</td>
+</tr>
+<tr id = "coord34">
+<td id = "lng">-95.4201377</td><td id = "lat">29.7765065</td>
+<td>#Nursing #Job alert: CVOR Travel Nursing Job Available in the grea... | Soliant Health | #Houston, TX http://t.co/adIySPf5gE #RN</td>
+</tr>
+<tr id = "coord35">
+<td id = "lng">-96.30061031</td><td id = "lat">30.62051616</td>
+<td>Texas A&amp;M beats Alabama 35-21. A&amp;M finally breaks through their struggles and puts on a show. @finebaum</td>
+</tr>
+<tr id = "coord36">
+<td id = "lng">-71.4130372</td><td id = "lat">41.7031042</td>
+<td>2nd nurse who tested positive for #Ebola was on Dallas flight  http://t.co/HsacvnMBkd http://t.co/Ymd0oUebYJ" @scandel187 Bleach Nicole!</td>
+</tr>
+<tr id = "coord37">
+<td id = "lng">-99.77629781</td><td id = "lat">16.77223191</td>
+<td>Mmm (@ Texas Ribs® Acapulco La Isla - @texasribs in Acapulco, GRO) https://t.co/1hGZbiGaUO</td>
+</tr>
+<tr id = "coord38">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>I'm holding out for bacon fried chicken. #soclose @ State Fair of Texas http://t.co/8Na2gx5hGN</td>
+</tr>
+<tr id = "coord39">
+<td id = "lng">-97.6991703</td><td id = "lat">30.275493</td>
+<td>@FollowXavier_ Acc -&gt; Texas State</td>
+</tr>
+<tr id = "coord40">
+<td id = "lng">-122.1146816</td><td id = "lat">37.4018822</td>
+<td>"Texas is my favorite country" @Wesbuhh</td>
+</tr>
+<tr id = "coord41">
+<td id = "lng">-80.33270647</td><td id = "lat">25.89258341</td>
+<td>Deep Ocean Blue 7ft Dining Table with Ice Tray Inserts Heading to Austin, Texas ! #art #miami #mayhem… http://t.co/lJq6HOx82K</td>
+</tr>
+<tr id = "coord42">
+<td id = "lng">-94.41367911</td><td id = "lat">33.425276</td>
+<td>@Osama2013Samy You should check out SMU or TCU in Fort Worth, Texas, or Rice University in Houston.</td>
+</tr>
+<tr id = "coord43">
+<td id = "lng">-97.73907524</td><td id = "lat">30.23736684</td>
+<td>I thought I was going to be fine wearing black skinny jeans today. I was wrong. #Texas</td>
+</tr>
+<tr id = "coord44">
+<td id = "lng">-92.47878532</td><td id = "lat">44.02288761</td>
+<td>Don't mess with Texas #TheyHaveEbola 👊😷</td>
+</tr>
+<tr id = "coord45">
+<td id = "lng">-118.36161344</td><td id = "lat">34.08604034</td>
+<td>Also everybody is so nice. Am I back in Texas? Or is the Seattle Freeze actually a thing..</td>
+</tr>
+<tr id = "coord46">
+<td id = "lng">-96.76221371</td><td id = "lat">32.77976991</td>
+<td>Carmel Apple deliciousness #BigTex #TexasStateFair @ 2014 State Fair of Texas http://t.co/7vZBgFrVwn</td>
+</tr>
+<tr id = "coord47">
+<td id = "lng">-96.93946614</td><td id = "lat">32.8708862</td>
+<td>Meeting notes, Texas style. @ Willams Square Office Towers of Las Colinas http://t.co/GKz009WPEL</td>
+</tr>
+<tr id = "coord48">
+<td id = "lng">-97.70904433</td><td id = "lat">30.29807347</td>
+<td>@Texas_Baseball Will concessions be open tonight?</td>
+</tr>
+<tr id = "coord49">
+<td id = "lng">-83.18189207</td><td id = "lat">42.57347558</td>
+<td>If you ain't talkin fried I don't wanna talk #BigTex @ Texas State Fair http://t.co/VSbXn0kEe2</td>
+</tr>
+<tr id = "coord50">
+<td id = "lng">-96.7639543</td><td id = "lat">32.90898833</td>
+<td>@LauraReadsALot whatchu know about Texas boot styles? miss upstate New York...</td>
+</tr>
+<tr id = "coord51">
+<td id = "lng">-81.7321792</td><td id = "lat">28.5148665</td>
+<td>Second Texas healthcare worker diagnosed with Ebola virus http://t.co/Oz4jmxLcQu</td>
+</tr>
+<tr id = "coord52">
+<td id = "lng">-101.878</td><td id = "lat">33.5647</td>
+<td>Vient de publier une photo @ Lubbock, Texas http://t.co/Pr6ZiuSWOP</td>
+</tr>
+<tr id = "coord53">
+<td id = "lng">-97.4363946</td><td id = "lat">25.9184472</td>
+<td>@MsDeadWedge Texas might be quarantined... good thing Mexico is like 20 mins away</td>
+</tr>
+<tr id = "coord54">
+<td id = "lng">-82.49549081</td><td id = "lat">28.00151869</td>
+<td>“@fakemikemulloy: What if the cure for Ebola is abortions and gay butt-fucking?  What then, Texas?  What then?”😩😩😩😩😩😭😭😭😭😭</td>
+</tr>
+<tr id = "coord55">
+<td id = "lng">-73.28560914</td><td id = "lat">40.84154294</td>
+<td>i miss texas tbh</td>
+</tr>
+<tr id = "coord56">
+<td id = "lng">-97.463524</td><td id = "lat">31.055995</td>
+<td>Do you "like" Lil Red's new look? #KeepItRed @ Bell County, Texas http://t.co/RVRDWYNDly</td>
+</tr>
+<tr id = "coord57">
+<td id = "lng">-1.14895749</td><td id = "lat">38.01512957</td>
+<td>Otro caso de #Ebola en #USA !!
+Tienen que dimitir el consejero del PP de Sanidad de Texas, Ana Mato y Obama</td>
+</tr>
+<tr id = "coord58">
+<td id = "lng">-95.4109282</td><td id = "lat">29.6708774</td>
+<td>Fleet diesel mechanic - Coca-Cola Refreshments: (#Houston, Texas) http://t.co/Qfxn3t628N #SkilledTrade #Job #Jobs #TweetMyJobs</td>
+</tr>
+<tr id = "coord59">
+<td id = "lng">-97.74361687</td><td id = "lat">30.26960519</td>
+<td>New US Ebola Case a Nurse who Treated Man in Dallas: The second health care worker diagnosed with Ebola in Texas is… http://t.co/he1nOjSH2i</td>
+</tr>
+<tr id = "coord60">
+<td id = "lng">-97.784084</td><td id = "lat">30.24174</td>
+<td>A must for every #Texas #Longhorns fan... #Converse new w tags at #UptownCheapskateAustin @ Uptown… http://t.co/K8elHF6qG4</td>
+</tr>
+<tr id = "coord61">
+<td id = "lng">-74.3618003</td><td id = "lat">41.4674464</td>
+<td>FYI, How could that worker from Texas get on a plane when she had a fever, that is really selfish of her! She wanted to make plans (wedding)</td>
+</tr>
+<tr id = "coord62">
+<td id = "lng">-98.48699646</td><td id = "lat">29.42989111</td>
+<td>New US Ebola Case a Nurse who Treated Man in Dallas: The second health care worker diagnosed with Ebola in Texas is… http://t.co/UDWM33BobG</td>
+</tr>
+<tr id = "coord63">
+<td id = "lng">-96.6988856</td><td id = "lat">33.0198431</td>
+<td>Ericsson: Consulting Manager (#Plano, Texas) http://t.co/iAHrlKlCPN #ProjectMgmt #Job #Jobs #TweetMyJobs</td>
+</tr>
+<tr id = "coord64">
+<td id = "lng">-94.07380793</td><td id = "lat">30.04285822</td>
+<td>Man I hope Texas can land Kendall Sheffield, or any of the other top corners in the state.</td>
+</tr>
+<tr id = "coord65">
+<td id = "lng">-94.07380793</td><td id = "lat">30.04285822</td>
+<td>Man I hope Texas can land Kendall Sheffield, or any of the other top corners in the state.</td>
+</tr>
+<tr id = "coord66">
+<td id = "lng">-95.12422936</td><td id = "lat">36.16767128</td>
+<td>Lovin my Texas boy!! Sure missin him tho! #cantwait #toofar</td>
+</tr>
+<tr id = "coord67">
+<td id = "lng">-81.38726209</td><td id = "lat">41.1413886</td>
+<td>@jason_pat89 I mean it went to Texas first so...</td>
+</tr>
+<tr id = "coord68">
+<td id = "lng">-122.48200834</td><td id = "lat">37.72338603</td>
+<td>“@RihannaDemos: The University of Texas at Austin will offer a "Rihanna Womanism" course! #USNavy! http://t.co/rIubDmQDiW” QUEEN!!</td>
+</tr>
+<tr id = "coord69">
+<td id = "lng">4.7218569</td><td id = "lat">50.9045403</td>
+<td>@isting1988 Next time you bring the Texas-style pancakes?</td>
+</tr>
+<tr id = "coord70">
+<td id = "lng">-97.74072</td><td id = "lat">30.274753</td>
+<td>I'm in The Texas Capitol. http://t.co/6WKuZOYjZX</td>
+</tr>
+<tr id = "coord71">
+<td id = "lng">-84.1442449</td><td id = "lat">39.7479648</td>
+<td>"@vivianaaaa___: Ebola is in Ohio and I just got home from Texas (whoops might of been me)" thanks viv we're all gonna die bc of u</td>
+</tr>
+<tr id = "coord72">
+<td id = "lng">-84.1442449</td><td id = "lat">39.7479648</td>
+<td>"@vivianaaaa___: Ebola is in Ohio and I just got home from Texas (whoops might of been me)" thanks viv we're all gonna die bc of u</td>
+</tr>
+<tr id = "coord73">
+<td id = "lng">-97.63350508</td><td id = "lat">26.1450923</td>
+<td>I'll be somewhere down in Texas if you're looking for me..</td>
+</tr>
+<tr id = "coord74">
+<td id = "lng">-96.75659198</td><td id = "lat">32.77795913</td>
+<td>#kiltselfie #killdares @ State Fair of Texas http://t.co/Rg0anoFE0R</td>
+</tr>
+<tr id = "coord75">
+<td id = "lng">19.4544773</td><td id = "lat">51.7765107</td>
+<td>#BreakingNews New Texas nurse with Ebola had fever on airliner http://t.co/uOj6J89hmZ @reuters</td>
+</tr>
+<tr id = "coord76">
+<td id = "lng">-77.5472036</td><td id = "lat">39.1101489</td>
+<td>Desfois le voitures de flics c celles du sheriff donc crari c'est ecrit sheriff en marron dessus direct jpense a texas rangers jsais pas pk</td>
+</tr>
+<tr id = "coord77">
+<td id = "lng">-84.9712936</td><td id = "lat">32.5363878</td>
+<td>@RobertaJoSansom @TAW3333 @bannerite @AuntLulie @FredChristian10 sounds like Texas no regulation no health insurance</td>
+</tr>
+<tr id = "coord78">
+<td id = "lng">-71.25440909</td><td id = "lat">42.32473205</td>
+<td>What if guns and Dallas Cowboys football cause Ebola, Texas? You have a hell of a decision on your hands.</td>
+</tr>
+<tr id = "coord79">
+<td id = "lng">-98.4936282</td><td id = "lat">29.4241219</td>
+<td>Field Support Rep I - Outerwall: (#SanAntonio, Texas) http://t.co/CMdgmVFsc4 #IT #Job #Jobs #TweetMyJobs</td>
+</tr>
+<tr id = "coord80">
+<td id = "lng">-80.16042095</td><td id = "lat">26.06532244</td>
+<td>c U 2niGht tExas</td>
+</tr>
+<tr id = "coord81">
+<td id = "lng">-74.01006354</td><td id = "lat">40.67738446</td>
+<td>My new brother in-law everyone!  #sanfording #hagman @ Austin, Texas http://t.co/C5MhjyghlG</td>
+</tr>
+<tr id = "coord82">
+<td id = "lng">-97.31947022</td><td id = "lat">32.72791305</td>
+<td>Cowboys Randle: ‘Biggest Mistake Of My Life’: Mike Fisher | @fishsportsIRVING, Texas (105.3 THE FAN) – Joseph… http://t.co/i83HzmzgS1</td>
+</tr>
+<tr id = "coord83">
+<td id = "lng">-115.26160668</td><td id = "lat">36.15675361</td>
+<td>“@EDMSHIT: Texas is really shitting the bed on this Ebola thing.
+
+http://t.co/o6iC9IFdQZ” relevant: http://t.co/TGopZbUMeR</td>
+</tr>
+<tr id = "coord84">
+<td id = "lng">-97.96152</td><td id = "lat">35.86091</td>
+<td>Maletas lista por q #Texas nos espera este week 💪💪💪  aqui ahy 💰</td>
+</tr>
+<tr id = "coord85">
+<td id = "lng">-84.70898657</td><td id = "lat">33.43605745</td>
+<td>QUESTION: how much is gas in Texas?</td>
+</tr>
+<tr id = "coord86">
+<td id = "lng">-94.36948897</td><td id = "lat">32.49079092</td>
+<td>Were in Texas.</td>
+</tr>
+<tr id = "coord87">
+<td id = "lng">-123.13038</td><td id = "lat">49.210899</td>
+<td>New Texas nurse with Ebola had fever on airliner http://t.co/t3LrHC8FRf</td>
+</tr>
+<tr id = "coord88">
+<td id = "lng">-95.14778162</td><td id = "lat">31.80133433</td>
+<td>#spanglish #houstonbound #texas #onestorycatcher http://t.co/M4yy0bwtsq</td>
+</tr>
+<tr id = "coord89">
+<td id = "lng">-71.25450986</td><td id = "lat">42.32481842</td>
+<td>What if the cure for Ebola is abortions and gay butt-fucking?  What then, Texas?  What then?</td>
+</tr>
+<tr id = "coord90">
+<td id = "lng">48.17147771</td><td id = "lat">28.8751178</td>
+<td>I'm at Starbucks Coffee Zone 1 in Al Ahmadi https://t.co/5QfwYXz32X</td>
+</tr>
+<tr id = "coord91">
+<td id = "lng">-82.22031084</td><td id = "lat">27.85302627</td>
+<td>@MyFoxTampaBay @ShepNewsTeam @FoxNews Texas TOWN under quarantine north of Dallas after several people came in contact w/Ebola</td>
+</tr>
+<tr id = "coord92">
+<td id = "lng">-97.0900397</td><td id = "lat">33.2040432</td>
+<td>"@PickSixPreviews: Georgia and Texas are the only teams in the nation to not allow a single passing play of over 40 yards all year"</td>
+</tr>
+<tr id = "coord93">
+<td id = "lng">-83.37839674</td><td id = "lat">33.91645458</td>
+<td>This ebola situation is getting ridiculous in Texas. Get it together</td>
+</tr>
+<tr id = "coord94">
+<td id = "lng">48.16002989</td><td id = "lat">28.86765923</td>
+<td>I'm at at work https://t.co/Ghh7bF6JPK</td>
+</tr>
+<tr id = "coord95">
+<td id = "lng">-116.5464716</td><td id = "lat">33.8080152</td>
+<td>Ebola Racism Reaches A New Low In Texas http://t.co/Al7rsdHCez via @BlackVoices</td>
+</tr>
+<tr id = "coord96">
+<td id = "lng">48.16934228</td><td id = "lat">28.88117202</td>
+<td>For a mission that started out at 7... I am finally back at 2325 lol (@ Camp Arifjan) https://t.co/OhsH5BB02f</td>
+</tr>
+<tr id = "coord97">
+<td id = "lng">-94.0787716</td><td id = "lat">32.4761206</td>
+<td>In texas b whaddup</td>
+</tr>
+<tr id = "coord98">
+<td id = "lng">-97.90319315</td><td id = "lat">29.89271006</td>
+<td>Welcome to the land of the trill ma boy! “@_perolike: Ahh Texas so beautiful”</td>
+</tr>
+<tr id = "coord99">
+<td id = "lng">-94.351791</td><td id = "lat">32.5198277</td>
+<td>"@RoHead4Life: Gotta love my birthplace, Screwd Up TEXAS mayyyyyne."</td>
+</tr>
+<tr id = "coord100">
+<td id = "lng">-88.02607921</td><td id = "lat">43.17421669</td>
+<td>“@CSTearlyoften: White House concedes there were 'shortcomings' in response to Texas Ebola case. http://t.co/LtufR16BZe" !!!!! OH REALLY????</td>
+</tr>
+<tr id = "coord101">
+<td id = "lng">-97.74252987</td><td id = "lat">30.26169208</td>
+<td>Off to a good start, Texas. #austin @ Four Seasons Hotel Austin http://t.co/ByFFRT4qDy</td>
+</tr>
+<tr id = "coord102">
+<td id = "lng">-95.5076971</td><td id = "lat">29.7611764</td>
+<td>@Radiomattrick @jamesintheradio I know I didn't just hear a guy living in Cleveland insult Houston Texas</td>
+</tr>
+<tr id = "coord103">
+<td id = "lng">-100.896</td><td id = "lat">29.3625</td>
+<td>Enjoying the day with my love😚😚😚 @ Del Rio, Texas http://t.co/QzfLlm9cix</td>
+</tr>
+<tr id = "coord104">
+<td id = "lng">-98.45481793</td><td id = "lat">29.86418657</td>
+<td>Yeah the Supreme Court blocks Texas law to ode 60 abortion clinics!  Women's rights are very important!  So glad they did this.</td>
+</tr>
+<tr id = "coord105">
+<td id = "lng">-81.51590668</td><td id = "lat">41.1478918</td>
+<td>@alec_kovacevich the lady wasn't even showing symptoms of Ebola until she got back to Texas.</td>
+</tr>
+<tr id = "coord106">
+<td id = "lng">-97.75116518</td><td id = "lat">30.21591864</td>
+<td>#Wcw @oldsoulamy leaving you is always the worst part. 😩 @ Austin, Texas "Yeehaww" http://t.co/9KqgXEpJiY</td>
+</tr>
+<tr id = "coord107">
+<td id = "lng">-95.79346384</td><td id = "lat">29.78469741</td>
+<td>{PSLs and boots}
+It's officially fall in Texas
+🎀👢🍂☕️ @ We 💕 Senior late arrival http://t.co/j3VcfOXtxg</td>
+</tr>
+<tr id = "coord108">
+<td id = "lng">34.60034355</td><td id = "lat">36.78962513</td>
+<td>#Canlarımla #Texas #açolaninsalar #özçekimi @ Pozcu Mersin http://t.co/6Kik9leYSS</td>
+</tr>
+<tr id = "coord109">
+<td id = "lng">-97.73647628</td><td id = "lat">30.28262155</td>
+<td>The Texas Clarinet shirts are so fratty I love it 😂</td>
+</tr>
+<tr id = "coord110">
+<td id = "lng">153.03477796</td><td id = "lat">-27.45811191</td>
+<td>All My Exes Live In Texas live show last night at Black Bear Lodge @ Black Bear Lodge http://t.co/0e4nc1Q1K8</td>
+</tr>
+<tr id = "coord111">
+<td id = "lng">-74.513667</td><td id = "lat">39.4018265</td>
+<td>Nurses: Texas hospital 'unprepared' for Ebola
+
+http://t.co/GaGCI9g5iU</td>
+</tr>
+<tr id = "coord112">
+<td id = "lng">-97.2921399</td><td id = "lat">32.7669495</td>
+<td>@DoUseewhatJCs Me too! Stupid Texas.</td>
+</tr>
+<tr id = "coord113">
+<td id = "lng">-75.8213367</td><td id = "lat">39.8168364</td>
+<td>Texas will join the big 10 in the next four years</td>
+</tr>
+<tr id = "coord114">
+<td id = "lng">-3.6736647</td><td id = "lat">40.4472907</td>
+<td>Estos también se las pintan solos #ebola http://t.co/X4Ej8ve9Q2</td>
+</tr>
+<tr id = "coord115">
+<td id = "lng">-89.92221946</td><td id = "lat">34.9369142</td>
+<td>only because he has a better flow than anyone else @ eating texas de 😛 http://t.co/kvLU1Z4NSk</td>
+</tr>
+<tr id = "coord116">
+<td id = "lng">-85.18457396</td><td id = "lat">41.10842336</td>
+<td>The Ebola'd Texas nurse visited Ohio, so now it's right next door and we're going to die.</td>
+</tr>
+<tr id = "coord117">
+<td id = "lng">-77.46043246</td><td id = "lat">38.47283975</td>
+<td>#Ebola Nurses N Texas state cross contamination between Mr Duncan &amp; pt's, nurses not wearing protective gear, nurses afraid 2 say names-OMG</td>
+</tr>
+<tr id = "coord118">
+<td id = "lng">-97.17978789</td><td id = "lat">32.98497746</td>
+<td>Last night's dinner. Impossible to eat healthy in Texas, but it's soo good! brisket, hot sausage, okra. #Foodiechats http://t.co/dDEDnQU4Il</td>
+</tr>
+<tr id = "coord119">
+<td id = "lng">-95.45975455</td><td id = "lat">30.20442776</td>
+<td>@Dcarrizo9 en texas. Uds?? Se mudaron tambien no?</td>
+</tr>
+<tr id = "coord120">
+<td id = "lng">-97.2813993</td><td id = "lat">32.6492774</td>
+<td>@iZK818 hopefully it hits on a Texas summer so it will dry up before it gets to ftw lol</td>
+</tr>
+<tr id = "coord121">
+<td id = "lng">-77.46033741</td><td id = "lat">38.47361282</td>
+<td>@Jody__Hubbard Sept 16 , Obama said. "No reason for concern of EBOLA in USA, listen 2 RNS description of nightmare N Texas, no protocols</td>
+</tr>
+<tr id = "coord122">
+<td id = "lng">13.8567951</td><td id = "lat">58.3943836</td>
+<td>@Alexis_Texas i want to have you</td>
+</tr>
+<tr id = "coord123">
+<td id = "lng">-93.10564967</td><td id = "lat">45.021949</td>
+<td>I'm at GT Nails in Little Canada, MN https://t.co/7VKmk9duNb</td>
+</tr>
+<tr id = "coord124">
+<td id = "lng">13.8567951</td><td id = "lat">58.3943836</td>
+<td>@Alexis_Texas so beutiful</td>
+</tr>
+<tr id = "coord125">
+<td id = "lng">13.8573557</td><td id = "lat">58.4038857</td>
+<td>@Alexis_Texas gudess. I wanne kiss it</td>
+</tr>
+<tr id = "coord126">
+<td id = "lng">-96.76222582</td><td id = "lat">32.78040212</td>
+<td>State Fair of Texas, day 2. I just want ALL the fried foods!! #BigTex  @statefairoftx @ Big Tex http://t.co/YjOxGz4Vyy</td>
+</tr>
+<tr id = "coord127">
+<td id = "lng">-69.2313683</td><td id = "lat">44.357555</td>
+<td>Associated Press
+White House: 'Shortcomings' in Texas Ebola case
+http://t.co/IzSQrNZzFZ</td>
+</tr>
+<tr id = "coord128">
+<td id = "lng">-93.63666</td><td id = "lat">42.04651207</td>
+<td>Texas sounded like an ok location for spring break til this Ebola shiz, sorry @rj_ruby 🙅</td>
+</tr>
+<tr id = "coord129">
+<td id = "lng">-99.12928838</td><td id = "lat">30.02812974</td>
+<td>Go to Waco Texas and experience king of the hill irl</td>
+</tr>
+<tr id = "coord130">
+<td id = "lng">-117.9207207</td><td id = "lat">34.0925625</td>
+<td>The scene in texas chainsaw when he throws the chick on the meat hook always fucks me up.</td>
+</tr>
+<tr id = "coord131">
+<td id = "lng">-73.8715287</td><td id = "lat">42.2727858</td>
+<td>http://t.co/j9BfT8eHPg</td>
+</tr>
+<tr id = "coord132">
+<td id = "lng">-122.0807749</td><td id = "lat">37.664511</td>
+<td>Ill be in west texas tomorrow</td>
+</tr>
+</table>
+</body>
+</html>
